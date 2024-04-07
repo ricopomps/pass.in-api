@@ -21,7 +21,7 @@ jobs:
           echo "sha=$SHA" >> $GITHUB_OUTPUT
 
       - name: Build docker image
-        run: docker build -t ricopomps/pass.in.api:${{ steps.generate_sha.outputs.sha }} .
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME}}/pass.in.api:${{ steps.generate_sha.outputs.sha }} .
 
       - name: Log into the container registry
         uses: docker/login-action@v3
@@ -31,4 +31,6 @@ jobs:
 
       - name: Push image
         run: |
-          docker push ricopomps/pass.in.api:${{ steps.generate_sha.outputs.sha }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME}}/pass.in.api:${{ steps.generate_sha.outputs.sha }}
+          docker tag ${{ secrets.DOCKERHUB_USERNAME}}/pass.in.api:${{ steps.generate_sha.outputs.sha }} ${{ secrets.DOCKERHUB_USERNAME}}/pass.in.api:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME}}/pass.in.api:latest
