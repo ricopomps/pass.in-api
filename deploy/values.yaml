@@ -2,7 +2,7 @@ replicaCount: 5
 image:
   repository: ricopomps/pass.in.api
   pullPolicy: Always
-  tag: 7f5f624
+  tag: b75a3c5
   port: 3333
 imagePullSecrets: []
 nameOverride: ''
