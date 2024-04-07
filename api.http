@@ -9,19 +9,19 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3333/events/ed4ab53e-eceb-43a1-968a-31a5e7ca724d/attendees
+POST http://localhost:3333/events/2c589bfb-c7f8-48dc-8393-b4bdd2485524/attendees
 Content-Type: application/json
 
 {
     "name": "Caroso",
-    "email": "caroso@gmail.com"
+    "email": "ricardopompiliodossantos@gmail.com"
 }
 
 ###
 GET http://localhost:3333/events/ed4ab53e-eceb-43a1-968a-31a5e7ca724d
 
 ###
-GET http://localhost:3333/attendees/1/badge
+GET http://localhost:3333/attendees/4/badge
 
 ###
 GET http://localhost:3333/attendees/3/check-in
